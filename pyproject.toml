@@ -2,12 +2,12 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
-name = "example_package_YOUR_USERNAME_HERE"
-version = "0.0.1"
+name = "imgw_api_wrapper_crazyjerz"
+version = "0.1.0"
 authors = [
-    { name="Example Author", email="author@example.com" },
+    { name="crazyjerz", email="informatyka11111@wp.pl" },
 ]
-description = "A small example package"
+description = "IMGW (Polish weather service) API wrapper. Do not use for commercial purposes."
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
@@ -18,4 +18,3 @@ classifiers = [
 
 [project.urls]
 "Homepage" = "https://github.com/pypa/sampleproject"
-"Bug Tracker" = "https://github.com/pypa/sampleproject/issues"
