@@ -4,6 +4,7 @@ from enum import Enum
 
 DIRECTIONS = {0: 'N', 90: 'E', 180: 'S', 270: 'W', 360: 'N'}
 
+
 # SCENE/INCA unavailable - for now, undocumented API
 class Model(Enum):
     AROME = 1
@@ -25,7 +26,8 @@ class IMGWObject(dict):
         self['snow'] = snow
         self['wind_speed'] = wind_speed
         self['pressure'] = pressure
-        self['date'] = datetime(int(date[0:4]), int(date[5:7]), int(date[8:10]), int(date[11:13]), int(date[14:16]), int(date[17:19]))
+        self['date'] = datetime(int(date[0:4]), int(date[5:7]), int(date[8:10]), int(date[11:13]), int(date[14:16]),
+                                int(date[17:19]))
         self['rain'] = rain
         self['cloud'] = cloud
         self['humidity'] = humidity
@@ -33,10 +35,10 @@ class IMGWObject(dict):
     def get_general_wind_direction(self) -> str:
         val = int((self['wind_direction'] / 22.5) + 0.5)  # code shamelessly stolen from stack overflow
         arr = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"]
-        return arr[(val%16)]
+        return arr[(val % 16)]
 
     def get_total_precipitation(self) -> float:
-        return self['snow']+self['rain']
+        return self['snow'] + self['rain']
 
 
 class IMGWData:
@@ -77,4 +79,3 @@ class IMGW(Session):
         if str(data) == '{}':
             raise LookupError("Position not available.")
         return IMGWData(data)
-

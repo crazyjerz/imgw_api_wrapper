@@ -2,8 +2,8 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
-name = "imgw_api_wrapper_crazyjerz"
-version = "0.1.0"
+name = "imgw_api_wrapper"
+version = "0.2.1"
 authors = [
     { name="crazyjerz", email="informatyka11111@wp.pl" },
 ]
@@ -17,4 +17,4 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/pypa/sampleproject"
+"Homepage" = "https://github.com/crazyjerz/imgw_api_wrapper"
